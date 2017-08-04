@@ -56,6 +56,7 @@
                         <constraints>
                             <constraint firstItem="uLz-bH-TsY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0b2-nt-opt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uLz-bH-TsY" secondAttribute="trailing" id="Svq-pL-G2N"/>
+                            <constraint firstItem="uLz-bH-TsY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XMd-hH-wNT"/>
                             <constraint firstItem="uLz-bH-TsY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dWK-yS-mYD"/>
                         </constraints>
                     </view>
