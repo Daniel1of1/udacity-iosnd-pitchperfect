@@ -22,46 +22,26 @@ class RecordSoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI(.stopped)
+        configureUI(isRecording: false)
     }
     
     //MARK: UI
     
-    enum RecordingState {
-        case recording
-        case stopped
-    }
-    
-    func configureUI(_ recordingState:RecordingState) {
-        switch recordingState {
-        case .recording:
-            configureUIForRecording()
-        case .stopped:
-            configureUIForStopped()
-        }
-    }
-    
-    func configureUIForRecording() {
-        recordButton.isEnabled = false
-        stopRecordButton.isEnabled = true
-        recordingLabel.text = "Recording In Progress"
-    }
-    
-    func configureUIForStopped() {
-        recordButton.isEnabled = true
-        stopRecordButton.isEnabled = false
-        recordingLabel.text = "Tap to record"
+    func configureUI(isRecording:Bool) {
+        recordButton.isEnabled = !isRecording
+        stopRecordButton.isEnabled = isRecording
+        recordingLabel.text = isRecording ? "Recording In Progress" : "Tap to record"
     }
     
     //MARK: Actions
     
     @IBAction func recordAudio(_ sender: Any) {
-        configureUI(.recording)
+        configureUI(isRecording: true)
         startRecording()
     }
     
     @IBAction func stopRecording(_ sender: Any) {
-        configureUI(.stopped)
+        configureUI(isRecording: false)
         stopAudioSession()
     }
     
