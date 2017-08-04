@@ -57,13 +57,33 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
     }
     
+    //MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio()
+        setupButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
+    
+    //Mark: UI
+    func setupButtons() {
+        [
+            snailButton,
+            chipmunkButton,
+            rabbitButton,
+            vaderButton,
+            echoButton,
+            reverbButton,
+            stopButton
+        ].forEach { (button) in
+            button.imageView?.contentMode = .scaleAspectFit
+        }
+    }
+    
+    
 }
